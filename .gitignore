@@ -33,4 +33,4 @@ Thumbs.db
 local.properties
 
 # Google Maps API key
-google_maps_key.xml
+app/src/main/res/values/strings.xml
