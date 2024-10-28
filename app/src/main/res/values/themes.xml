@@ -1,0 +1,82 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.FitnessTracking" parent="Theme.MaterialComponents.NoActionBar">
+
+        <!-- Main colors -->
+        <item name="colorPrimary">@color/dark_gray</item>
+        <item name="colorSecondary">@color/medium_gray</item>
+        <item name="android:colorBackground">@color/very_dark_gray</item>
+        <item name="colorError">@color/errorColor</item>
+
+        <!-- Secondary colors -->
+        <item name="colorPrimaryVariant">@color/almost_black</item>
+        <item name="colorSecondaryVariant">@color/dark_gray</item>
+        <item name="colorSurface">@color/dark_gray</item>
+
+        <!-- Text colors -->
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorOnSecondary">@android:color/white</item>
+        <item name="colorOnBackground">@android:color/white</item>
+        <item name="colorOnError">@android:color/white</item>
+        <item name="colorOnSurface">@android:color/white</item>
+
+        <!-- More attributes -->
+        <item name="scrimBackground">@color/very_dark_gray</item>
+        <item name="textAppearanceHeadline1">@style/TextAppearance.MaterialComponents.Headline1</item>
+        <item name="textAppearanceHeadline2">@style/TextAppearance.MaterialComponents.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.MaterialComponents.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.MaterialComponents.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.MaterialComponents.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.MaterialComponents.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.MaterialComponents.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.MaterialComponents.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.MaterialComponents.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.MaterialComponents.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.MaterialComponents.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.MaterialComponents.Button</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.MaterialComponents.Overline</item>
+
+        <!-- Cursor color -->
+        <item name="colorAccent">@color/cursor_color</item>
+
+        <!-- UI elements custom style -->
+        <item name="editTextStyle">@style/CustomEditTextStyle</item>
+        <item name="textInputStyle">@style/CustomTextInputLayoutStyle</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+    </style>
+
+    <!-- EditText custom style -->
+    <style name="CustomEditTextStyle" parent="Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:textColorHint">@color/light_gray</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:background">@color/dark_gray</item>
+        <item name="android:textCursorDrawable">@null</item>
+    </style>
+
+    <!-- TextInputLayout custom style-->
+    <style name="CustomTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/dark_gray</item>
+        <item name="hintTextColor">@color/light_gray</item>
+        <item name="android:textColorHint">@color/light_gray</item>
+    </style>
+
+    <!-- TextView custom style-->
+    <style name="TextViewStyle" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- AlertDialog custom style-->
+    <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
+
+
+</resources>

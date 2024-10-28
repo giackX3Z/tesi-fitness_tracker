@@ -1,0 +1,36 @@
+# Android specific
+.idea/
+.gradle/
+/build/
+/app/build/
+*.iml
+.externalNativeBuild
+.cxx
+
+# Gradle files
+gradle-wrapper.jar
+gradle.properties
+/gradle/
+
+# Kotlin specific
+*.kotlin_module
+
+# Firebase specific
+google-services.json
+google-services.xml
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Log and temporary files
+*.log
+*.temp
+*.tmp
+
+#Local proprieties
+/local.properties
+local.properties
+
+# Google Maps API key
+google_maps_key.xml

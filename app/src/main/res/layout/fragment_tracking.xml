@@ -1,0 +1,144 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clInnerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/dark_gray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mapView">
+
+        <!-- Testo del timer -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00:00:00"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toTopOf="@+id/tvStepCounter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Contatore dei passi -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvStepCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steps: 0"
+            android:textSize="50sp"
+            app:layout_constraintBottom_toTopOf="@+id/layoutTextViews"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTimer" />
+
+        <!-- Nuovo layout per le due TextView affiancate -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutTextViews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/btnToggleRun"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvStepCounter">
+
+            <!-- Prima TextView a sinistra -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvActualDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Current distance: \n N/A"
+                android:textSize="20sp"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintEnd_toStartOf="@+id/tvActualCalories"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Seconda TextView a destra -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvActualCalories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="Current Kcal burned: \n N/A"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvActualDistance"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Pulsante per avviare -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnToggleRun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnFinishRun"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layoutTextViews" />
+
+        <!-- Pulsante per concludere -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFinishRun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finish Run"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnToggleRun"
+            app:layout_constraintTop_toBottomOf="@+id/layoutTextViews" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvLetsGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's go, USERNAME!"
+        android:textAlignment="center"
+        android:textSize="50sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/clInnerLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/clInnerLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:indeterminate="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
